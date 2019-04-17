@@ -1,0 +1,18 @@
+<ion-header no-shadow no-border>
+    <ion-navbar color="martins">
+        <button ion-button menuToggle color="white">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            <div class="text-center-title">{{ pageTitle }}</div>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+
+    <super-tabs id="mainTabs" [config]="{ sideMenu: 'left' }" scrollTabs toolbarColor="light" toolbarBackground="martins" indicatorColor="martins-light" badgeColor="red" (tabSelect)="onTabSelect($event)">
+        <super-tab *ngFor="let page of pages" [root]="page.pageName" [icon]="page.icon" [id]="page.id" [rootParams]="params"></super-tab>
+    </super-tabs>
+
+</ion-content>

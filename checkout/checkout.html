@@ -1,0 +1,60 @@
+<ion-content>
+<section id="pagecheck">
+    <ion-row>
+        <ion-col col-12>
+            <div class="ajustcenter">
+                <img class="check" src="assets/check.png">
+            </div>
+        </ion-col>
+
+        <ion-col col-12>
+            <div class="text-pedido">
+                <div class="text-center">
+                    <h6>Seu pedido <span>83129643</span> está confirmado, agradecemos pela escolha, confiança e preferência por nossa empresa.</h6>
+                </div>
+            </div>
+        </ion-col>
+
+        <ion-col col-12>
+            <div class="ajustcenter">
+                <button ion-button icon-start full color="orange" class="gerarboleto" (click)="showLoading()">
+                    <ion-icon name="codebar-icon"></ion-icon>
+                    Clique para gerar o boleto.
+                </button>
+            </div>
+        </ion-col>
+
+        <ion-col col-12>
+            <div class="text-pedido">
+                <div class="text-center">
+                    <h6>Os pedidos dependem da confirmação de pagamento dos boletos para serem despachados, ou seja, somente após o pagamento do boleto bancário é que iremos enviar suas mercadorias.</h6>
+                </div>
+            </div>
+        </ion-col>
+
+         <ion-col col-12>
+              <div class="ajustcenter">
+                 <img src="assets/martinssolo.png" class="martins-logo" >
+              </div>
+         </ion-col>
+         <ion-col col-12>
+            <div class="text-center">
+               <h6>Dúvidas: (34)3301-5888 ou enviar email para site@martins.com.br</h6>
+            </div>
+        </ion-col>
+        <ion-col col-12 style="margin-top: -10px">
+            <div class="ajustcenter">
+                <button ion-button full color="primary" class="toback" (click)="gotoback()">
+                    VOLTAR
+                </button>
+            </div>
+        </ion-col>
+        <ion-col col-12 style="margin-top: -10px">
+            <div class="text-center">
+                <span class="cropyng">© Martins Comércio e Serviços de Distribuição S.A</span>
+            </div>
+        </ion-col>
+
+     </ion-row>
+</section>
+</ion-content>

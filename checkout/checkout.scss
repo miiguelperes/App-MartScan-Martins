@@ -1,0 +1,53 @@
+page-checkout {
+  ion-content{
+    background-color: #fff;
+  }
+
+  #pagecheck{
+    padding-top: 2vh;
+    color: #777777;
+    background-color: #fff;
+  }
+  #pagecheck .ajustcenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #pagecheck .ajustcenter .check{
+    width: 22vh;
+  }
+  .text-center{text-align: center}
+  .text-center h6{margin: 0px}
+  .text-pedido .text-center{
+    color: #777777;
+    text-align: center;
+  }
+  .text-pedido .text-center h6 span{
+    color: #F27933;
+  }
+  .text-pedido .text-center h6 {
+   margin: 0px;
+  }
+  .gerarboleto{
+    background-color: #37C977;
+    height: 8vh;
+    max-width: 90%;
+  }
+  .gerarboleto ion-icon{
+    margin-right: 2vh;
+  }
+  .martins-logo {
+    width: 15vh;
+  }
+  .toback{
+    height: 8vh;
+    max-width: 90%;
+  }
+  .cropyng{
+    font-size: 12px!important;
+    font-weight: 500;
+    color: #0080DB;
+  }
+}
+

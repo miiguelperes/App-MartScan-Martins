@@ -1,0 +1,189 @@
+<ion-header no-shadow no-border *ngIf="soloTrue">
+    <ion-navbar color="martins">
+        <button ion-button menuToggle color="white">
+                  <ion-icon name="menu"></ion-icon>
+                </button>
+        <ion-title>
+            <div class="text-center-title">Carrinho de Compras</div>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="goToHome()" color="white">
+                <ion-icon ios="ios-return-right" md="md-return-right"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-navbar color="white">
+        <div *ngIf="!keyboard.isOpen() && soloTrue == true">
+            <ion-row>
+                <ion-col col-6>
+                    <div class="ajustlabel">
+                        <span class="ajust-itens-drop">Forma Pagto:</span>
+                        <ion-item>
+                            <ion-select [(ngModel)]="gender" style="width: 100%">
+                                <ion-option value="f">À VISTA</ion-option>
+                                <ion-option value="m">À VISTA</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </div>
+                </ion-col>
+                <ion-col col-6>
+                    <div class="ajustlabel">
+                        <span class="ajust-itens-drop">Filial Exp:</span>
+                        <ion-item>
+                            <ion-select [(ngModel)]="gender" style="width: 100%">
+                                <ion-option value="f">UDI-MG</ion-option>
+                                <ion-option value="m">UDI-MG</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+<div *ngIf="!keyboard.isOpen() && soloTrue == false">
+    <ion-header>
+        <ion-row class="top-ajust-nav">
+            <ion-col col-6>
+                <div class="ajustlabel">
+                    <span class="ajust-itens-drop">Forma Pagto:</span>
+                    <ion-item>
+                        <ion-select [(ngModel)]="gender" style="width: 100%">
+                            <ion-option value="f">À VISTA</ion-option>
+                            <ion-option value="m">À VISTA</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+            </ion-col>
+            <ion-col col-6>
+                <div class="ajustlabel">
+                    <span class="ajust-itens-drop">Filial Exp:</span>
+                    <ion-item>
+                        <ion-select [(ngModel)]="gender" style="width: 100%">
+                            <ion-option value="f">UDI-MG</ion-option>
+                            <ion-option value="m">UDI-MG</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-header>
+</div>
+
+<ion-content>
+    <div *ngIf="!keyboard.isOpen() && soloTrue == false">
+        <div style="margin-top: 9vh"></div>
+    </div>
+    <ion-list>
+        <div *ngIf="!isArray(items)" class="no-list">
+            <div (click)="scanNow()">
+                <span>
+                    <ion-icon name="qr-scanner"></ion-icon>
+                    <h6>escanear agora</h6>
+                </span>
+            </div>
+        </div>
+        <ion-item *ngFor="let item of items; let i = index">
+            <form [formGroup]="form">
+                <ion-grid class="grid-ajust">
+                    <ion-row>
+                        <ion-col col-10>
+                            <h3 style="white-space: pre-wrap; color: #7D7D7D">{{item._nome}}</h3>
+                        </ion-col>
+                        <ion-col col-2>
+                            <div class="flex-ajus-trash">
+                                <button ion-button icon-only class="trash" (click)="removeFromCart(item, i)" small>
+                                    <ion-icon name="trash"></ion-icon>
+                                </button>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <div class="cod-ajust">
+                                <p>CÓD. PROD.: {{item._codigo}} | BARRAS: {{item._codigo_ean}}</p>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <div class="thumb-ajust">
+                        <ion-row>
+                            <ion-col col-4>
+                                <img src="{{item._imagem}}">
+                            </ion-col>
+                            <ion-col col-8>
+                                <ion-row>
+                                    <ion-col col-6>
+                                        <p>UNIT.</p>
+                                        <h3>{{item._preco | currency:'BRL'}}</h3>
+                                    </ion-col>
+                                    <ion-col col-6>
+                                        <p>CX.</p>
+                                        <h3>{{item._precoCaixaFechada | currency:'BRL'}}</h3>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row>
+                                    <ion-col col-6>
+                                        <ion-item class="imputAjust">
+                                            <ion-input type="number" value="{{item._qty}}" formControlName="qtd_item"></ion-input>
+                                        </ion-item>
+                                    </ion-col>
+                                    <ion-col col-6>
+                                        <div class="flex-ajus-add">
+                                            <div *ngIf="!item.btn; then add else added"></div>
+                                            <ng-template #add>
+                                                <button ion-button class="btnchange" (click)="changeQty(item, i)">Alterar</button>
+                                            </ng-template>
+                                            <!--
+                                            <ng-template #added>
+                                                <button ion-button class="btnchanged" (click)="buttonAdd(item.id)">Alterar</button>
+                                            </ng-template>
+                                            -->
+                                        </div>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+                        </ion-row>
+                    </div>
+                </ion-grid>
+            </form>
+        </ion-item>
+    </ion-list>
+    <div class="btn-clear-cart" *ngIf="isArray(items)">
+        <button ion-button icon-end (click)="clearCart()">LIMPAR CARRINHO<ion-icon name="trash"></ion-icon></button>
+    </div>
+    <div *ngIf="!keyboard.isOpen()">
+        <div style="margin-top: 15vh"></div>
+    </div>
+</ion-content>
+
+<div *ngIf="!keyboard.isOpen()">
+    <ion-footer>
+        <ion-row>
+            <ion-col>
+                <div class="text-ajust-pedido-min">
+                    Pedido Mínimo: R$ 500,00.<span class="mincheckprice"> Falta R$ 400,00</span>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-7>
+                <div class="more-justify">
+                    <div class="text-total-cart">
+                        <ion-row>
+                            <span style="font-size: 0.7em;">
+                                TOTAL:
+                            </span>
+                        </ion-row>
+                        <ion-row>
+                            {{ total() | currency: 'BRL': true }}
+                        </ion-row>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col col-5>
+                <button ion-button class="btnfinish" block (click)="pushPage(false)">FINALIZAR</button>
+            </ion-col>
+        </ion-row>
+    </ion-footer>
+</div>

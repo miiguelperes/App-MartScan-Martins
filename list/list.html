@@ -1,0 +1,110 @@
+<div *ngIf="!keyboard.isOpen()">
+    <ion-header>
+        <div class="condpaga">
+            CONDIÇÃO DE PAGTO.:
+            <span class="label-pgmto">
+                A VISTA.
+             </span>
+            <span class="btn-change">
+                ALTERAR
+             </span>
+        </div>
+    </ion-header>
+</div>
+
+<ion-content>
+
+    <div *ngIf="!keyboard.isOpen()">
+        <div style="margin-top: 4vh"></div>
+    </div>
+    <ion-searchbar *ngIf="!isArray(products)" [formControl]="searchTerm" animated="true" placeholder="Pesquisar"></ion-searchbar>
+    <ion-list>
+        <div *ngIf="isArray(products)" class="no-list" (click)="scanNow()">
+            <span>
+                <ion-icon name="qr-scanner"></ion-icon>
+                <h6>escanear agora</h6>
+            </span>
+        </div>
+        <div *ngFor="let item of products; let i = index">
+            <form [formGroup]="form">
+                <ion-item *ngIf="item.visible">
+                    <ion-grid class="grid-ajust">
+                        <ion-row>
+                            <ion-col col-12>
+                                <h3 style="white-space: pre-wrap; color: #7D7D7D">{{item.nome}}</h3>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col>
+                                <div class="cod-ajust">
+                                    <p>CÓD. PROD.: {{item.codigo}} | BARRAS: {{item.codigo_ean}}</p>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                        <div class="thumb-ajust">
+                            <ion-row>
+                                <ion-col col-4>
+                                    <img src="{{item.imagem}} ">
+                                </ion-col>
+                                <ion-col col-8>
+                                    <ion-row>
+                                        <ion-col col-6>
+                                            <p>UNIT.</p>
+                                            <h3>{{item.preco | currency:'BRL'}}</h3>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <p>CX.</p>
+                                            <h3>{{item._precoCaixaFechada | currency:'BRL'}}</h3>
+                                        </ion-col>
+                                    </ion-row>
+                                    <ion-row>
+                                        <ion-col col-6>
+                                            <ion-item class="imputAjust">
+                                                <ion-input type="number" placeholder="0" formControlName="qtd_item"></ion-input>
+                                            </ion-item>
+                                        </ion-col>
+                                        <ion-col col-6>
+                                            <div class="flex-ajus-add">
+                                                <div *ngIf="!item.btn; then add else added"></div>
+                                                <ng-template #add>
+                                                    <button ion-button class="btnadd" (click)="addToCart(item)">Adicionar</button>
+                                                </ng-template>
+                                                <!--
+                                                <ng-template #added>
+                                                    <button ion-button class="btnadded" (click)="buttonAdd(item.id)">Adicionado</button>
+                                                </ng-template>
+                                                -->
+                                            </div>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-col>
+                            </ion-row>
+                        </div>
+                    </ion-grid>
+                </ion-item>
+            </form>
+        </div>
+    </ion-list>
+    <div *ngIf="!keyboard.isOpen()">
+        <div style="margin-top: 10vh"></div>
+    </div>
+</ion-content>
+
+<div *ngIf="!keyboard.isOpen()">
+    <ion-footer>
+        <ion-row>
+            <ion-col col-6>
+                <button icon-start ion-button class="btncleanlist" (click)="clearlist()" block>
+                    <ion-icon name="trash"></ion-icon>
+                    LIMPAR LISTA
+                </button>
+            </ion-col>
+            <ion-col col-6>
+                <button icon-start ion-button class="btngotocart" (click)="gotocart()" block>
+                    <ion-icon name="cart"></ion-icon>
+                    CARRINHO
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-footer>
+</div>

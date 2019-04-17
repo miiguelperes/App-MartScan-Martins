@@ -1,0 +1,79 @@
+<ion-header no-shadow no-border>
+    <ion-navbar color="martins">
+        <button ion-button menuToggle color="white">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            <div class="text-center-title">MEU PERFIL</div>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="goToHome()" color="white">
+                        <ion-icon ios="ios-return-right" md="md-return-right"></ion-icon>
+                    </button>
+        </ion-buttons>
+
+    </ion-navbar>
+    <ion-navbar color="martins">
+        <div class="text-center perfil-ajust">
+            <img src="assets/user.png">
+        </div>
+        <div class="ajust-razao">
+            <span class="razao">
+                RAZÃO SOCIAL<br><h6>{{identity.nom_razaosocial}}</h6>
+            </span>
+            <span class="codcli">
+                CÓD. CLIENTE<br><h6>{{identity.id_cliente}}</h6>
+            </span>
+        </div>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div class="left-set">
+        <ion-item>
+            <ion-label color="grey" stacked>EMAIL:</ion-label>
+            <ion-input type="email" [disabled]="true" placeholder="{{identity.des_email}}"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="grey" stacked>CNPJ:</ion-label>
+            <ion-input type="email" [disabled]="true" placeholder="{{identity.num_cnpj}}"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="grey" stacked>ENDEREÇO:</ion-label>
+            <ion-input type="email" [disabled]="true" placeholder="{{identity.endereco.end_logradouro}}, {{identity.endereco.end_numero}}, {{identity.endereco.end_complemento}} - {{identity.endereco.end_cidade}}/{{identity.endereco.end_estado}} - {{identity.endereco.end_cep}}"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label color="grey" stacked>CNPJ:</ion-label>
+            <ion-input type="email" [disabled]="true" placeholder="{{identity.num_cnpj}}"></ion-input>
+        </ion-item>
+        <ion-row class="ajust-row">
+            <ion-item style="width: 70%;padding: 0px;" class="noline">
+                <ion-label color="grey" stacked>CONDIÇÃO DE PAGAMENTO:</ion-label>
+                <ion-input type="email" [disabled]="true" placeholder=""></ion-input>
+            </ion-item>
+            <div class="btn-ajust">
+                <button class="btn-alter">ALTERAR</button>
+            </div>
+        </ion-row>
+        <ion-row class="ajust-row">
+            <ion-item style="width: 70%;padding: 0px;" class="noline">
+                <ion-label color="grey" stacked>FILIAL DE EXPEDIÇÃO:</ion-label>
+                <ion-input type="email" [disabled]="true" placeholder="{{identity.cod_filialexpedicao}}"></ion-input>
+            </ion-item>
+            <div class="btn-ajust">
+                <button class="btn-alter">ALTERAR</button>
+            </div>
+        </ion-row>
+        <ion-row class="ajust-row">
+            <ion-item style="width: 70%;padding: 0px;" class="noline">
+                <ion-label color="grey" stacked>FILIAL DE FATURAMENTO:</ion-label>
+                <ion-input style="border-bottom: none!important;" type="email" [disabled]="true" placeholder="{{identity.cod_filialfaturamento}}"></ion-input>
+            </ion-item>
+            <div class="btn-ajust">
+                <button class="btn-alter">ALTERAR</button>
+            </div>
+        </ion-row>
+    </div>
+
+</ion-content>

@@ -1,0 +1,108 @@
+page-login {
+    ion-content {
+        background-color: #F7F7F7!important;
+    }
+    .hidden {
+        display: none!important;
+    }
+    .item {
+        background: transparent!important;
+    }
+    .item-block {
+        background: transparent!important;
+    }
+    .item-ios {
+        background: transparent!important;
+    }
+    .item-input {
+        background: transparent!important;
+    }
+    .logo {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        flex-flow: wrap;
+        flex-wrap: wrap;
+    }
+    .logo img {
+        text-align: center;
+        width: 55%;
+    }
+    page-login .lembrar {
+        color: #7D7D7D!important;
+    }
+    .lista-login {
+        color: #7D7D7D!important;
+        background-color: transparent;
+    }
+    .lista-login .item-md {
+        color: #7D7D7D!important;
+        background-color: transparent;
+    }
+    .label {
+        background-color: transparent;
+        color: #7D7D7D!important;
+    }
+    .lembrar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+    }
+    .toggle-light:checked {
+        background-color: #a7cfdf;
+    }
+    .login-create {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-create .newc {
+        margin-bottom: 1.8em;
+    }
+    .footerlogin {
+        margin: 0px;
+        padding: 0px;
+        min-height: 60px;
+        background-color: #fff;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footerlogin img {
+        width: 100px;
+    }
+    [noScroll] {
+        overflow: hidden;
+    }
+    .dobody {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        background-color: #F7F7F7;
+    }
+    .container {
+        margin: 3em;
+        flex: 1;
+        background-color: #F7F7F7;
+    }
+    #footer {
+        height: 60px;
+        /* the footer's total height */
+    }
+    #footer-content {
+        background-color: #f3e5f5;
+        border: 1px solid #ab47bc;
+        height: 60px;
+        /* height + top/bottom paddding + top/bottom border must add up to footer height */
+        padding: 8px;
+    }
+}

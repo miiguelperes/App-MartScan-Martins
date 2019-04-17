@@ -1,0 +1,54 @@
+<div class="dobody">
+    <div class="container">
+        <form [formGroup]="form" id="screenHeight" class="formFieldLogin">
+            <div class="logo">
+                <img src="assets/martscan.png">
+            </div>
+
+            <div class="lista-login">
+                <ion-item>
+                    <ion-label color="label">
+                        <ion-icon name="mail"></ion-icon> EMAIL</ion-label>
+                    <ion-input type="email" formControlName="email" value="geovanni@wingmidia.com.br"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label color="label">
+                        <ion-icon name="person"></ion-icon> CNPJ</ion-label>
+                    <ion-input placeholder="Somente números" type="tel" formControlName="cnpj" [brmasker]="{mask:'00.000.000/0000-00', len:18}" value="11239580000190"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                        <ion-label color="label">
+                            <ion-icon name="key"></ion-icon> SENHA</ion-label>
+                        <ion-input type="password" formControlName="password" value="wingmidia@10"></ion-input>
+                    </ion-item>
+                </div>
+
+            <div class="lembrar">
+                <ion-label color="label">LEMBRAR DE MIM</ion-label>
+                <ion-toggle formControlName="isLogged" [(ngModel)]="isLogged" toggle-class="toggle-light" ></ion-toggle>
+
+            </div>
+
+            <ion-list>
+                <button ion-button icon-start block color="martins" (click)="login()">
+                <ion-icon name="log-in"></ion-icon>
+                Entrar
+            </button>
+            </ion-list>
+
+            <ion-list>
+                <div class="login-create">
+                    <ion-label class="newc" color="martins">OU CRIAR UMA NOVA CONTA</ion-label>
+                    <ion-label color="label">ESQUECI MINHA SENHA</ion-label>
+                </div>
+            </ion-list>
+        </form>
+    </div>
+    <footer id="footer">
+          <div class="footerlogin">
+              <img src="./assets/poweredby.png">
+          </div>
+    </footer>
+</div>

@@ -1,0 +1,198 @@
+page-cart {
+    .cod-ajust p {
+        color: #B9B9B9;
+        margin-top: -0.5em;
+        font-size: 12px;
+    }
+    .scroll-content {
+        background: #fff;
+    }
+    .grid-ajust {
+        margin-top: -5px!important;
+        margin-bottom: -10px!important;
+        padding-top: 0px!important;
+        padding-bottom: 0px!important;
+    }
+    .grid-ajust img {
+        padding: 2px;
+        border: 1px solid #E1E1E1;
+        border-radius: 8px;
+    }
+    .thumb-ajust {
+        margin-top: -0.3em;
+    }
+    .thumb-ajust h3 {
+        font-weight: 500;
+        color: #F27933;
+    }
+    .btnchange {
+        background-color: #7D7D7D!important;
+        font-size: 12px!important;
+    }
+    .btnchange:hover {
+        background-color: #7D7D7D!important;
+        font-size: 12px!important;
+    }
+    .btnchanged {
+        background-color: #F27933 !important;
+        font-size: 12px !important;
+    }
+    .btnchanged:hover {
+        background-color: #F27933 !important;
+        font-size: 12px !important;
+    }
+    .scrollabe {
+        overflow: scroll;
+        height: 70vh;
+    }
+    .condpaga {
+        padding: 0.5em;
+        width: 100%;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        background-color: #F7F7F7;
+        color: #7D7D7D;
+    }
+    .label-pgmto {
+        padding-left: 0.3em;
+        font-weight: 500;
+    }
+    .no-list {
+        text-align: center;
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        color: #e0e0e0;
+    }
+    .no-list ion-icon {
+        font-size: 30px;
+        width: 100%;
+    }
+    .no-list h6 {
+        width: 100%;
+    }
+    .btn-clear-cart {
+        margin-top: 5vh;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-clear-cart button {
+        background-color: #004282;
+    }
+    .hide {
+        display: none;
+    }
+    .btn-change {
+        padding-left: 0.3em;
+        font-weight: 500;
+        color: #F27933;
+    }
+    .btncleanlist {}
+    .keyboard-open .scroll-content {
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+    .keyboard-close .scroll-content {
+        margin-top: 0vh;
+        margin-bottom: 0vh;
+    }
+    .ajust-header {
+        margin-top: 80vh!important;
+        padding: 50px!important;
+        height: 100px;
+    }
+    .btngotocart {
+        background-color: #F27933 !important;
+    }
+    .imputAjust.item-md {
+        padding-left: 0px!important;
+    }
+    ion-footer {
+        background-color: #fff!important;
+    }
+    ion-header {
+        background-color: #fff!important;
+    }
+    ion-select {
+        max-width: 100%;
+    }
+    .ajustlabel {
+        margin-left: 0.5em;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .text-ajust-pedido-min {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #7D7D7D;
+        margin-bottom: -8px;
+    }
+    .text-ajust-pedido-min .mincheckprice {
+        color: #B20000;
+        padding-left: 0.5em;
+    }
+    .text-ajust-pedido-min ion-icon {
+        color: #007FDA;
+    }
+    .text-total-cart {
+        font-size: 1.2em;
+        color: #007FDA;
+        font-weight: 500;
+    }
+    .more-justify {
+        height: 100%;
+        display: flex;
+        margin-left: 1.6vh;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .btnfinish {
+        font-weight: 500;
+        background-color: #F27933;
+    }
+    ion-footer {
+        background-color: #fff;
+    }
+    .ajust-itens-drop {
+        margin-right: -17px!important;
+    }
+    .flex-ajus-add {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    .flex-ajus-trash {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .flex-ajus-trash .trash {
+        background-color: transparent;
+        border: 1px solid #7D7D7D;
+        border-radius: 4px;
+        box-shadow: none;
+        min-height: 33px;
+        min-width: 33px;
+    }
+    .flex-ajus-trash .trash:active {
+        background-color: #ebebeb;
+    }
+    .flex-ajus-trash .trash:hover {
+        background-color: #ebebeb;
+    }
+    .flex-ajus-trash .trash ion-icon {
+        color: #7D7D7D;
+    }
+}

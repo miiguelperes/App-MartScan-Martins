@@ -1,0 +1,142 @@
+<ion-header no-shadow no-border>
+    <ion-navbar color="martins">
+        <button ion-button menuToggle color="white">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            <div class="text-center-title">MEUS PEDIDOS</div>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="goToHome()" color="white">
+                        <ion-icon ios="ios-return-right" md="md-return-right"></ion-icon>
+                    </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let d of diseases; let i=index" text-wrap (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}">
+            <div>
+                <table style="width:100%; color: #ACACAC;">
+                    <tr>
+                        <th>
+                            <div class="text-left">
+                                <h5>PEDIDO:</h5>
+                                <h2 style="font-weight: 400; color:#666666">{{d.pedido}}</h2>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="text-left">
+                                <h5>VALOR TOTAL:</h5>
+                                <h2 style="font-weight: 400;color:#666666">{{d.total | currency:'BRL'}}</h2>
+                            </div>
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                    <div style="margin: 5px">
+                        <ion-icon color="success" item-right [name]="isGroupShown(i) ? 'arrow-dropdown' : 'arrow-dropright'" class="icon-resqe"></ion-icon>
+                    </div>
+                    <tr style="padding-top: 10px">
+                        <th>
+                            <div class="text-left">
+                                <h5>CONDIÇÃO DE PAGAMENTO:</h5>
+                                <h2 style="font-weight: 400;color:#666666">{{d.condicao}}</h2>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="text-left">
+                                <h5>FILIAL EXPEDIÇÃO:</h5>
+                                <h2 style="font-weight: 400;color:#666666">{{d.filial}}</h2>
+                            </div>
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+
+                </table>
+
+            </div>
+            <div *ngIf="isGroupShown(i)">
+                <table class="table-desc">
+                    <tr class="topo">
+                        <th>
+                            <h6 style="width: 9vh;">CÓD.</h6>
+                        </th>
+                        <th>
+                            <h6 style="width: 21vh;">DESCRIÇÃO</h6>
+                        </th>
+                        <th>
+                            <h6 style="width: 7vh;">QTDE.</h6>
+                        </th>
+                        <th>
+                            <h6 style="width: 8vh;">VALOR</h6>
+                        </th>
+                    </tr>
+
+                </table>
+                <table class="table-desc-body">
+                    <tr class="tr-now" *ngFor="let p of d.produtos; let i=index">
+                        <th>
+                            <h6 style="width: 9vh;">{{p.cod}}</h6>
+                        </th>
+                        <th>
+                            <h6 style="width: 21vh;">{{p.decricao}}</h6>
+                        </th>
+                        <th class="centro">
+                            <h6 style="width: 4vh;">{{p.qntd}}</h6>
+                        </th>
+                        <th class="centro">
+                            <h6 style="width: 8vh;">{{p.valor}}</h6>
+                        </th>
+                    </tr>
+                </table>
+                <table style="width:100%; color: #ACACAC;" class="progress">
+                    <tr>
+                        <th>
+                            <div class="progress-active" *ngIf="d.statusDate.venda"></div>
+                            <div class="progress-item" *ngIf="!d.statusDate.venda"></div>
+                            <h6>VENDA</h6>
+                            <h5>{{d.statusDate.venda}}</h5>
+                            <h5 *ngIf="!d.statusDate.venda"> </h5>
+                        </th>
+                        <th>
+                            <div class="progress-active" *ngIf="d.statusDate.pagamento"></div>
+                            <div class="progress-item" *ngIf="!d.statusDate.pagamento"></div>
+                            <h6>PAGAMENTO</h6>
+                            <h5>{{d.statusDate.pagamento}}</h5>
+                            <h5 *ngIf="!d.statusDate.pagamento"> </h5>
+                        </th>
+                        <th>
+                            <div class="progress-active" *ngIf="d.statusDate.faturamento"></div>
+                            <div class="progress-item" *ngIf="!d.statusDate.faturamento"></div>
+                            <h6>FATURAMENTO</h6>
+                            <h5>{{d.statusDate.faturamento}}</h5>
+                            <h5 *ngIf="!d.statusDate.faturamento"> </h5>
+                        </th>
+                        <th>
+                            <div class="progress-active" *ngIf="d.statusDate.entrega"></div>
+                            <div class="progress-item" *ngIf="!d.statusDate.entrega"></div>
+                            <h6>ENTREGA</h6>
+                            <h5>{{d.statusDate.entrega}}</h5>
+                            <h5 *ngIf="!d.statusDate.entrega"> </h5>
+                        </th>
+                        <th>
+                            <div class="progress-active" *ngIf="d.statusDate.finalizado"></div>
+                            <div class="progress-item" *ngIf="!d.statusDate.finalizado"></div>
+                            <h6>FINALIZADO</h6>
+                            <h5>{{d.statusDate.finalizado}}</h5>
+                            <h5 *ngIf="!d.statusDate.finalizado"> </h5>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>
